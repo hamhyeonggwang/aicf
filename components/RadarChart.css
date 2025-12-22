@@ -1,0 +1,93 @@
+.radar-chart-container {
+  background: white;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-top: 32px;
+  border: 1px solid #e5e7eb;
+}
+
+.radar-chart-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.radar-chart-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.radar-chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.radar-chart-canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.radar-chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #555;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.legend-color.capacity {
+  background: #2563eb;
+}
+
+.legend-color.performance {
+  background: #10b981;
+}
+
+.radar-chart-error {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .radar-chart-container {
+    padding: 16px;
+  }
+
+  .radar-chart-wrapper {
+    padding: 10px;
+  }
+
+  .radar-chart-legend {
+    font-size: 12px;
+  }
+}
+
+

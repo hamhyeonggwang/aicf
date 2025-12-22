@@ -1,0 +1,85 @@
+.domain-section {
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.domain-section.priority {
+  border: 2px solid #50c878;
+  box-shadow: 0 4px 12px rgba(80, 200, 120, 0.2);
+}
+
+.domain-header {
+  padding: 28px;
+  background: #f9fafb;
+  border-bottom: 2px solid;
+}
+
+.domain-b .domain-header {
+  border-bottom-color: #2563eb;
+}
+
+.domain-s .domain-header {
+  border-bottom-color: #7b68ee;
+}
+
+.domain-d .domain-header {
+  border-bottom-color: #50c878;
+}
+
+.domain-e .domain-header {
+  border-bottom-color: #ff6b6b;
+}
+
+.domain-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: -0.02em;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #50c878;
+  color: white;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.domain-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.domain-items {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .domain-header {
+    padding: 20px;
+  }
+
+  .domain-title {
+    font-size: 20px;
+  }
+
+  .domain-items {
+    padding: 16px;
+  }
+}
+
+
+
+

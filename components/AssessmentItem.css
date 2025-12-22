@@ -1,0 +1,234 @@
+.assessment-item {
+  padding: 24px;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #d1d5db;
+  transition: all 0.2s ease;
+}
+
+.assessment-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+}
+
+.assessment-item.read-only {
+  opacity: 0.7;
+  background: #f5f5f5;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.item-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icf-code {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #1f2937;
+  color: white;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.icf-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+.rationale-toggle {
+  padding: 6px 12px;
+  font-size: 12px;
+  background: #e9ecef;
+  color: #495057;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.rationale-toggle:hover {
+  background: #dee2e6;
+}
+
+.item-question {
+  margin-bottom: 20px;
+}
+
+.question-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.clinical-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.mapping-rationale {
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+}
+
+.mapping-rationale strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #856404;
+}
+
+.mapping-rationale p {
+  font-size: 14px;
+  color: #856404;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.code-rationale {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ffc107;
+}
+
+.item-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.option-label {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-label:hover:not(.disabled) {
+  border-color: #4a90e2;
+  background: #f0f7ff;
+}
+
+.option-label.selected {
+  border-color: #4a90e2;
+  background: #e3f2fd;
+}
+
+.option-label.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.option-label input[type="radio"] {
+  margin-right: 12px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.option-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.option-label-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.option-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.item-notes {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.notes-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.notes-textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.notes-textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.item-score-display {
+  margin-top: 16px;
+  padding: 12px;
+  background: #e8f5e9;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #2e7d32;
+}
+
+.item-score-display strong {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .assessment-item {
+    padding: 16px;
+  }
+
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .question-text {
+    font-size: 16px;
+  }
+
+  .option-label {
+    padding: 12px;
+  }
+}
+
+
+
+

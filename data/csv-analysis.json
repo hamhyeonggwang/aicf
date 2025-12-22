@@ -1,0 +1,608 @@
+{
+  "totalCount": 372,
+  "uniqueCodes": 58,
+  "domainStats": {
+    "Body Functions": 149,
+    "Activities & Participation": 223
+  },
+  "codes": [
+    {
+      "code": "b126",
+      "domain": "Body Functions",
+      "description": "기질과 성격기능",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "스스로 수행 후 웃는 반응 증가, 해냈다 등의 언어적 표현 관찰되며 자기효능감 향상보임"
+      ]
+    },
+    {
+      "code": "b130",
+      "domain": "Body Functions",
+      "description": "에너지와 욕동기능",
+      "exampleCount": 5,
+      "sampleExamples": [
+        "과제 흥미 높아 자발 참여",
+        "치료사 지시에 따른 수행 의지 높음",
+        "자기효능감 향상 목표(스스로 과제 완수)"
+      ]
+    },
+    {
+      "code": "b140",
+      "domain": "Body Functions",
+      "description": "주의력기능",
+      "exampleCount": 6,
+      "sampleExamples": [
+        "sustain attention이 저하됨",
+        "놀이 중 주의 집중 시간이 짧음",
+        "의식/주의/시지각 기능을 목표(ICF: b110, b140, b156)"
+      ]
+    },
+    {
+      "code": "b152",
+      "domain": "Body Functions",
+      "description": "감정기능",
+      "exampleCount": 5,
+      "sampleExamples": [
+        "신체적 guide 시 놀라는 모습",
+        "영상/어플 볼 때 웃는 반응",
+        "감정 안정 유지하며 참여"
+      ]
+    },
+    {
+      "code": "b156",
+      "domain": "Body Functions",
+      "description": "지각기능",
+      "exampleCount": 5,
+      "sampleExamples": [
+        "발뒤꿈치로 휴지 밟아 body schema 증가",
+        "sensory kit로 상지 감각 자극",
+        "과각성 시 감각조절(sensory modulation) 적용"
+      ]
+    },
+    {
+      "code": "b164",
+      "domain": "Body Functions",
+      "description": "높은 수준의 인지기능",
+      "exampleCount": 5,
+      "sampleExamples": [
+        "평가 후 첫 치료 진행 (낯가림 우려 있었으나 지시 수행 및 의사소통하며 치료)",
+        "고차 인지기능(계획, 문제해결 등)",
+        "자기결정·자기조절 언어적 피드백·대처전략"
+      ]
+    },
+    {
+      "code": "b167",
+      "domain": "Body Functions",
+      "description": "언어의 정신기능",
+      "exampleCount": 3,
+      "sampleExamples": [
+        "놀이 상황에서 자발적 언어 사용",
+        "색 이름 명명 정확성 낮음",
+        "자기표현 어려움→열린 질문으로 유도"
+      ]
+    },
+    {
+      "code": "b172",
+      "domain": "Body Functions",
+      "description": "계산기능",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "강점: 수 개념 및 금액 일부 이해"
+      ]
+    },
+    {
+      "code": "b235",
+      "domain": "Body Functions",
+      "description": "안뜰기능",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "시각 및 전정계 자극 제공"
+      ]
+    },
+    {
+      "code": "b260",
+      "domain": "Body Functions",
+      "description": "고유감각기능",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "수동적 관절 운동으로 고유수용감각 및 각성 촉진"
+      ]
+    },
+    {
+      "code": "b280",
+      "domain": "Body Functions",
+      "description": "통증감각",
+      "exampleCount": 2,
+      "sampleExamples": [
+        "워커 잡고 이동 시 U/E Jt 통증",
+        "impingement control"
+      ]
+    },
+    {
+      "code": "b440",
+      "domain": "Body Functions",
+      "description": "호흡기능",
+      "exampleCount": 4,
+      "sampleExamples": [
+        "breathing exercise",
+        "rib cage mobilization",
+        "RAB breathing with scoliosis"
+      ]
+    },
+    {
+      "code": "b710",
+      "domain": "Body Functions",
+      "description": "관절의 운동성기능",
+      "exampleCount": 48,
+      "sampleExamples": [
+        "신체 움직임 과제에 참여하는 동안 필요한 자세 유지 및 신체 사용에 적극적으로 참여",
+        "pelvic mobilization",
+        "U/E & L/E mobilization"
+      ]
+    },
+    {
+      "code": "b730",
+      "domain": "Body Functions",
+      "description": "근력기능",
+      "exampleCount": 19,
+      "sampleExamples": [
+        "Q-muscle & hamstring eccentric, concentric repeat",
+        "core muscle strengthining",
+        "Lt. U/E gentle manual exercise & strengthening exercise"
+      ]
+    },
+    {
+      "code": "b735",
+      "domain": "Body Functions",
+      "description": "근긴장도기능",
+      "exampleCount": 6,
+      "sampleExamples": [
+        "근지구력",
+        "proximal tone build up",
+        "u/e tone build up (biceps, triceps)"
+      ]
+    },
+    {
+      "code": "b740",
+      "domain": "Body Functions",
+      "description": "근지구력기능",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "근지구력 강화를 위해 운동 난이도를 조절하여 제공"
+      ]
+    },
+    {
+      "code": "b755",
+      "domain": "Body Functions",
+      "description": "불수의적 움직임반응기능",
+      "exampleCount": 9,
+      "sampleExamples": [
+        "trunk stability increase",
+        "trunk-pelvic upright",
+        "허리를 펴라고 지시하면 upright 시도"
+      ]
+    },
+    {
+      "code": "b760",
+      "domain": "Body Functions",
+      "description": "수의적 움직임기능",
+      "exampleCount": 23,
+      "sampleExamples": [
+        "하지의 지면 반발력 이용, push off 하여 하지 신전근 기능적 협응 촉진",
+        "근긴장",
+        "앞으로 미는 것보다 버티는 게 더 어려움(보호자 진술)"
+      ]
+    },
+    {
+      "code": "b780",
+      "domain": "Body Functions",
+      "description": "근육기능 및 움직임기능에 관련된 감각",
+      "exampleCount": 4,
+      "sampleExamples": [
+        "3초 이상 position sustain 시 left l/e 떨림 관찰",
+        "toe intrinsic m activation",
+        "pelvic muscle massage"
+      ]
+    },
+    {
+      "code": "d110",
+      "domain": "Activities & Participation",
+      "description": "보기",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "아이패드 시각자극 프로그램 활용"
+      ]
+    },
+    {
+      "code": "d131",
+      "domain": "Activities & Participation",
+      "description": "",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "원인과 결과의 논리적 연결성 경험"
+      ]
+    },
+    {
+      "code": "d155",
+      "domain": "Activities & Participation",
+      "description": "기술습득하기",
+      "exampleCount": 2,
+      "sampleExamples": [
+        "환경 적응 참여 증진",
+        "장난감을 만지며 아동의 사회성, 인지, 감각·운동 발달"
+      ]
+    },
+    {
+      "code": "d160",
+      "domain": "Activities & Participation",
+      "description": "주의집중하기",
+      "exampleCount": 9,
+      "sampleExamples": [
+        "좋아하는 영상 및 노래를 들으며 환경 적응",
+        "소리 매칭, 지시에 맞게 선택하기",
+        "시지각 활동지를 이용한 시지각 증진"
+      ]
+    },
+    {
+      "code": "d166",
+      "domain": "Activities & Participation",
+      "description": "쓰기",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "읽기(문자 정보 이해)"
+      ]
+    },
+    {
+      "code": "d170",
+      "domain": "Activities & Participation",
+      "description": "쓰기",
+      "exampleCount": 7,
+      "sampleExamples": [
+        "쓰기 전 훈련과제",
+        "숫자 쓰기",
+        "숫자의 공간 위치관계 이해에 도움 요구"
+      ]
+    },
+    {
+      "code": "d172",
+      "domain": "Activities & Participation",
+      "description": "다중 과제수행하기",
+      "exampleCount": 3,
+      "sampleExamples": [
+        "숫자와 기수/서수 개념 일반화",
+        "자릿수 넘어가는 덧셈 연습",
+        "뺄셈 어려움"
+      ]
+    },
+    {
+      "code": "d175",
+      "domain": "Activities & Participation",
+      "description": "다중 과제수행하기",
+      "exampleCount": 2,
+      "sampleExamples": [
+        "problem solving 보드게임",
+        "calibrates, problem solving"
+      ]
+    },
+    {
+      "code": "d220",
+      "domain": "Activities & Participation",
+      "description": "다중 과제수행하기",
+      "exampleCount": 24,
+      "sampleExamples": [
+        "제공된 과제를 이해하고 적극적으로 참여",
+        "과제 시행 방법에 대해 이해가 어려웠으며 치료사에 의해 수동적으로 참여",
+        "과제를 시작 위해 추가적인 설명이 필요하였으며, 과제 지속을 위해 간헐적으로 언어적 강화가 필요"
+      ]
+    },
+    {
+      "code": "d230",
+      "domain": "Activities & Participation",
+      "description": "일상생활 수행하기",
+      "exampleCount": 4,
+      "sampleExamples": [
+        "독립적인 일상생활에 참여하기",
+        "독립적 활동 완성 유도",
+        "일상 문제 리스트 업 후 도움 제공"
+      ]
+    },
+    {
+      "code": "d330",
+      "domain": "Activities & Participation",
+      "description": "말하기",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "“아파” 언어 표현"
+      ]
+    },
+    {
+      "code": "d350",
+      "domain": "Activities & Participation",
+      "description": "대화",
+      "exampleCount": 2,
+      "sampleExamples": [
+        "자신이 하고자 하는 의사표현이 있음",
+        "social participation → discloses/replies"
+      ]
+    },
+    {
+      "code": "d360",
+      "domain": "Activities & Participation",
+      "description": "의사소통장치 및 기술 사용하기",
+      "exampleCount": 3,
+      "sampleExamples": [
+        "일정·방법·준비전략 중재, 자료를 PPT로 유형화 계획",
+        "iPad 화면에서 목표 외 영역 터치(정확도 미흡)",
+        "키오스크 앱 사용 연습"
+      ]
+    },
+    {
+      "code": "d3602",
+      "domain": "Activities & Participation",
+      "description": "의사소통장치 및 기술 사용하기",
+      "exampleCount": 2,
+      "sampleExamples": [
+        "컴퓨터 다루기(타자연습, 단문연습)",
+        "컴퓨터 기본 기능 및 프로그램 활용 학습"
+      ]
+    },
+    {
+      "code": "d410",
+      "domain": "Activities & Participation",
+      "description": "기본자세 바꾸기",
+      "exampleCount": 26,
+      "sampleExamples": [
+        "resistive creeping",
+        "체중이동 훈련(자세 전환)",
+        "kneeling→half‑kneeling 전환"
+      ]
+    },
+    {
+      "code": "d4103",
+      "domain": "Activities & Participation",
+      "description": "기본자세 바꾸기",
+      "exampleCount": 12,
+      "sampleExamples": [
+        "sitting",
+        "sit to stand repeat",
+        "bench sitting"
+      ]
+    },
+    {
+      "code": "d4104",
+      "domain": "Activities & Participation",
+      "description": "기본자세 바꾸기",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "foot W/B"
+      ]
+    },
+    {
+      "code": "d415",
+      "domain": "Activities & Participation",
+      "description": "자세 유지하기",
+      "exampleCount": 12,
+      "sampleExamples": [
+        "prone on elbow position sustain for shoulder stability",
+        "뚜껑 열기 위한 적절 자세 지도",
+        "Rt trunk elongation, kneeling→half‑kneeling sustain"
+      ]
+    },
+    {
+      "code": "d4154",
+      "domain": "Activities & Participation",
+      "description": "자세 유지하기",
+      "exampleCount": 6,
+      "sampleExamples": [
+        "standing",
+        "standing with support",
+        "BOSU 위에서 한발서기 균형"
+      ]
+    },
+    {
+      "code": "d430",
+      "domain": "Activities & Participation",
+      "description": "물건 들어올리기와 나르기",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "냉장고 문 열기, 키보드 치기, 물건 들어올리기 등 수행"
+      ]
+    },
+    {
+      "code": "d440",
+      "domain": "Activities & Participation",
+      "description": "손의 섬세한 사용",
+      "exampleCount": 28,
+      "sampleExamples": [
+        "쥐고 놓기 어려움/손끝 긁는 패턴",
+        "raking grasp에서 palmar grasp로 유도",
+        "raking grasp pattern 관찰"
+      ]
+    },
+    {
+      "code": "d445",
+      "domain": "Activities & Participation",
+      "description": "손과 팔의 사용",
+      "exampleCount": 18,
+      "sampleExamples": [
+        "게임컨텐츠를 활용하여 상체의 움직임 과제에 참여함",
+        "리처, 키보드 클리커 등 다양한 보조도구 사용하여 일상생활 참여 경험하기",
+        "task 이용하여 rt.side u/e 사용 유도"
+      ]
+    },
+    {
+      "code": "d4452",
+      "domain": "Activities & Participation",
+      "description": "손과 팔의 사용",
+      "exampleCount": 5,
+      "sampleExamples": [
+        "pencil & eraser use",
+        "reaching guide",
+        "task 이용하여 reach 통해 손 사용 유도"
+      ]
+    },
+    {
+      "code": "d4454",
+      "domain": "Activities & Participation",
+      "description": "손과 팔의 사용",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "stabilize paper during writing"
+      ]
+    },
+    {
+      "code": "d4458",
+      "domain": "Activities & Participation",
+      "description": "손과 팔의 사용",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "bilateral skill: use shift to separate magazine pages"
+      ]
+    },
+    {
+      "code": "d450",
+      "domain": "Activities & Participation",
+      "description": "걷기",
+      "exampleCount": 10,
+      "sampleExamples": [
+        "support gait",
+        "mustang walker gait (신발 착용 후 gait 시행, 평소보다 l/e 떨림 빈번)",
+        "resistive sideward walking"
+      ]
+    },
+    {
+      "code": "d455",
+      "domain": "Activities & Participation",
+      "description": "이동하기",
+      "exampleCount": 4,
+      "sampleExamples": [
+        "링피트 뛰기 활동",
+        "aerobic exercise",
+        "계단 오르내리기(한손잡고)"
+      ]
+    },
+    {
+      "code": "d4553",
+      "domain": "Activities & Participation",
+      "description": "이동하기",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "jumping repeat"
+      ]
+    },
+    {
+      "code": "d460",
+      "domain": "Activities & Participation",
+      "description": "다양한 장소에서 이동하기",
+      "exampleCount": 2,
+      "sampleExamples": [
+        "다양한 장소에서 이동하기 위한 환경 수정 및 조정",
+        "장소 이동하기"
+      ]
+    },
+    {
+      "code": "d510",
+      "domain": "Activities & Participation",
+      "description": "씻기",
+      "exampleCount": 4,
+      "sampleExamples": [
+        "액체 비누로 신체 일부 씻기 훈련",
+        "손씻기 활동",
+        "self-care(세수하기)"
+      ]
+    },
+    {
+      "code": "d520",
+      "domain": "Activities & Participation",
+      "description": "신체일부 관리하기",
+      "exampleCount": 5,
+      "sampleExamples": [
+        "ADL training: 손톱정리하기",
+        "보조도구 사용하여 Rt side 손톱정리 연습",
+        "손톱정리 시 사선 정리에 연습 필요"
+      ]
+    },
+    {
+      "code": "d540",
+      "domain": "Activities & Participation",
+      "description": "옷 입고 벗기",
+      "exampleCount": 4,
+      "sampleExamples": [
+        "병원복 단추 채우기 연습",
+        "작은 단추 잡아 반대쪽에서 빼기 기술 향상",
+        "양말신기(앞/뒤, 위치 학습)"
+      ]
+    },
+    {
+      "code": "d550",
+      "domain": "Activities & Participation",
+      "description": "먹기",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "젓가락으로 다양한 물체 옮기기"
+      ]
+    },
+    {
+      "code": "d620",
+      "domain": "Activities & Participation",
+      "description": "상품과 서비스획득",
+      "exampleCount": 1,
+      "sampleExamples": [
+        "마트 방문하여 물건 구매"
+      ]
+    },
+    {
+      "code": "d620/d860",
+      "domain": "Activities & Participation",
+      "description": "상품과 서비스획득",
+      "exampleCount": 3,
+      "sampleExamples": [
+        "카페 지불·잔돈 계산·영수증 확인 단계별 구조화",
+        "제한: 화폐 구별·수량 인식 어려움",
+        "돈 계산하기(키오스크 사용)"
+      ]
+    },
+    {
+      "code": "d630",
+      "domain": "Activities & Participation",
+      "description": "식사준비하기",
+      "exampleCount": 3,
+      "sampleExamples": [
+        "간단한 식사 준비 목표 설정",
+        "반찬 뚜껑 열고 닫기",
+        "bimanual therapy(밥그릇+수저)"
+      ]
+    },
+    {
+      "code": "d640",
+      "domain": "Activities & Participation",
+      "description": "집안일하기",
+      "exampleCount": 2,
+      "sampleExamples": [
+        "조리도구 안전 사용 훈련",
+        "안경 닦기"
+      ]
+    },
+    {
+      "code": "d710",
+      "domain": "Activities & Participation",
+      "description": "기본적인 대인상호작용",
+      "exampleCount": 8,
+      "sampleExamples": [
+        "색칠하기 과제와 사회적 상호작용 놀이 통합",
+        "사회적 상호작용 촉진 위해 모델링 활용",
+        "놀이 지속성 향상을 위한 언어적/신체적 촉진 전략"
+      ]
+    },
+    {
+      "code": "d820",
+      "domain": "Activities & Participation",
+      "description": "학교교육",
+      "exampleCount": 2,
+      "sampleExamples": [
+        "학교 교육 참여",
+        "진학 관련 공부 계획하기"
+      ]
+    }
+  ]
+}

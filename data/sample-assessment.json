@@ -1,0 +1,520 @@
+{
+  "id": "icf-participation-assessment-v1",
+  "title": "ICF 기반 참여(participation) 평가도구",
+  "version": "1.0.0",
+  "description": "ICF 분류체계에 기반한 활동 및 참여 영역 평가도구",
+  "domains": {
+    "d": {
+      "domain": "d",
+      "title": "활동 및 참여 (Activities and Participation)",
+      "description": "일상생활에서의 활동 수행 및 사회적 참여 수준을 평가합니다.",
+      "codes": [
+        {
+          "code": "d450",
+          "title": "걷기",
+          "description": "다양한 지면에서의 보행 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d450 코드: 걷기. 지면의 변화, 장애물, 경사 등 다양한 환경에서의 보행 능력을 평가합니다."
+        },
+        {
+          "code": "d455",
+          "title": "이동하기",
+          "description": "다양한 이동 수단을 이용한 이동 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d455 코드: 이동하기. 걷기, 달리기, 계단 오르기 등 다양한 이동 패턴을 포함합니다."
+        },
+        {
+          "code": "d460",
+          "title": "다양한 장소로 이동하기",
+          "description": "집 밖으로 나가 다양한 장소로 이동하는 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d460 코드: 다양한 장소로 이동하기. 지역사회 내 이동, 대중교통 이용 등을 포함합니다."
+        },
+        {
+          "code": "d510",
+          "title": "씻기",
+          "description": "신체 청결을 위한 목욕 및 세면 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d510 코드: 씻기. 목욕, 샤워, 세면 등 신체 청결 유지 활동을 평가합니다."
+        },
+        {
+          "code": "d520",
+          "title": "옷 입기",
+          "description": "의복 착용 및 탈의 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d520 코드: 옷 입기. 상의, 하의, 신발 등 의복 착용 전 과정을 포함합니다."
+        },
+        {
+          "code": "d550",
+          "title": "먹기",
+          "description": "음식 섭취 및 식사 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d550 코드: 먹기. 음식을 입으로 가져가고, 씹고, 삼키는 전 과정을 평가합니다."
+        },
+        {
+          "code": "d620",
+          "title": "상품 및 서비스 획득하기",
+          "description": "구매 및 거래 활동 수행 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d620 코드: 상품 및 서비스 획득하기. 쇼핑, 거래, 계약 등을 포함합니다."
+        },
+        {
+          "code": "d630",
+          "title": "식사 준비하기",
+          "description": "음식 준비 및 조리 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d630 코드: 식사 준비하기. 식재료 준비, 조리, 정리 등을 포함합니다."
+        },
+        {
+          "code": "d640",
+          "title": "가사 일하기",
+          "description": "가정 내 일상 업무 수행 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d640 코드: 가사 일하기. 청소, 세탁, 정리 등 가정 관리 활동을 평가합니다."
+        },
+        {
+          "code": "d710",
+          "title": "기본적 대인관계",
+          "description": "가족 및 친밀한 관계에서의 상호작용",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d710 코드: 기본적 대인관계. 가족, 친구와의 관계 형성 및 유지를 평가합니다."
+        },
+        {
+          "code": "d720",
+          "title": "복잡한 대인관계",
+          "description": "다양한 사회적 맥락에서의 관계 형성 및 유지",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d720 코드: 복잡한 대인관계. 직장, 학교, 지역사회 등 다양한 환경에서의 관계를 평가합니다."
+        },
+        {
+          "code": "d750",
+          "title": "비공식 사회적 관계",
+          "description": "비공식적 사회 집단 참여",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d750 코드: 비공식 사회적 관계. 취미, 종교, 자원봉사 등 비공식 집단 참여를 평가합니다."
+        },
+        {
+          "code": "d760",
+          "title": "가족 관계",
+          "description": "가족 구성원과의 관계 및 역할 수행",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d760 코드: 가족 관계. 부모, 자녀, 배우자 등 가족 내 역할 및 관계를 평가합니다."
+        },
+        {
+          "code": "d770",
+          "title": "친밀한 관계",
+          "description": "로맨틱한 관계 및 친밀한 파트너십",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d770 코드: 친밀한 관계. 연인, 배우자와의 친밀한 관계 형성 및 유지를 평가합니다."
+        },
+        {
+          "code": "d910",
+          "title": "시민생활",
+          "description": "시민으로서의 권리 및 의무 수행",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 d910 코드: 시민생활. 투표, 법적 절차, 공공 서비스 이용 등을 포함합니다."
+        }
+      ]
+    },
+    "b": {
+      "domain": "b",
+      "title": "신체 기능 (Body Functions)",
+      "description": "신체의 생리적 기능 및 심리적 기능을 평가합니다.",
+      "codes": [
+        {
+          "code": "b130",
+          "title": "에너지 및 동기",
+          "description": "에너지 수준 및 동기 부여 능력",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 b130 코드: 에너지 및 동기. 활동 수행을 위한 에너지 수준과 동기 부여를 평가합니다."
+        }
+      ]
+    },
+    "s": {
+      "domain": "s",
+      "title": "신체 구조 (Body Structures)",
+      "description": "신체의 해부학적 구조를 평가합니다.",
+      "codes": [
+        {
+          "code": "s730",
+          "title": "상지 구조",
+          "description": "팔, 손 등의 상지 구조",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 s730 코드: 상지 구조. 팔, 손, 손가락 등의 구조적 무결성을 평가합니다."
+        }
+      ]
+    },
+    "e": {
+      "domain": "e",
+      "title": "환경 요인 (Environmental Factors)",
+      "description": "환경적 장벽 및 촉진 요인을 평가합니다.",
+      "codes": [
+        {
+          "code": "e110",
+          "title": "제품 및 기술",
+          "description": "일상생활 보조 제품 및 기술",
+          "qualifier": {
+            "min": 0,
+            "max": 4,
+            "default": 2
+          },
+          "mappingRationale": "WHO ICF 분류체계 e110 코드: 제품 및 기술. 보조기구, 의료기기 등 일상생활 지원 제품을 평가합니다."
+        }
+      ]
+    }
+  },
+  "items": [
+    {
+      "id": "item-d450",
+      "icfCode": "d450",
+      "domain": "d",
+      "question": "다양한 지면(평지, 계단, 경사면 등)에서 걷는 능력은 어떻습니까?",
+      "clinicalDescription": "평지, 계단, 경사면 등 다양한 지면에서의 보행 능력을 평가합니다. 보행 속도, 균형, 지구력 등을 종합적으로 고려합니다.",
+      "mappingRationale": "WHO ICF 분류체계 d450 코드: 걷기. 지면의 변화, 장애물, 경사 등 다양한 환경에서의 보행 능력을 평가합니다.",
+      "options": [
+        {
+          "value": 0,
+          "label": "문제 없음",
+          "description": "독립적으로 모든 지면에서 걷기 가능"
+        },
+        {
+          "value": 1,
+          "label": "경미한 문제",
+          "description": "일부 지면에서 약간의 어려움"
+        },
+        {
+          "value": 2,
+          "label": "중간 정도 문제",
+          "description": "많은 지면에서 보행 어려움, 보조기구 필요"
+        },
+        {
+          "value": 3,
+          "label": "심각한 문제",
+          "description": "대부분의 지면에서 보행 불가능, 상당한 도움 필요"
+        },
+        {
+          "value": 4,
+          "label": "완전한 문제",
+          "description": "보행 불가능"
+        }
+      ]
+    },
+    {
+      "id": "item-d455",
+      "icfCode": "d455",
+      "domain": "d",
+      "question": "걷기, 달리기, 계단 오르기 등 다양한 이동 패턴을 수행하는 능력은 어떻습니까?",
+      "clinicalDescription": "걷기, 달리기, 계단 오르기, 점프 등 다양한 이동 패턴의 수행 능력을 평가합니다.",
+      "mappingRationale": "WHO ICF 분류체계 d455 코드: 이동하기. 걷기, 달리기, 계단 오르기 등 다양한 이동 패턴을 포함합니다.",
+      "options": [
+        {
+          "value": 0,
+          "label": "문제 없음",
+          "description": "모든 이동 패턴 독립 수행 가능"
+        },
+        {
+          "value": 1,
+          "label": "경미한 문제",
+          "description": "일부 이동 패턴에서 약간의 어려움"
+        },
+        {
+          "value": 2,
+          "label": "중간 정도 문제",
+          "description": "많은 이동 패턴에서 어려움, 보조기구 필요"
+        },
+        {
+          "value": 3,
+          "label": "심각한 문제",
+          "description": "대부분의 이동 패턴 수행 불가능"
+        },
+        {
+          "value": 4,
+          "label": "완전한 문제",
+          "description": "이동 패턴 수행 불가능"
+        }
+      ]
+    },
+    {
+      "id": "item-d460",
+      "icfCode": "d460",
+      "domain": "d",
+      "question": "집 밖으로 나가 다양한 장소(마트, 병원, 공원 등)로 이동하는 능력은 어떻습니까?",
+      "clinicalDescription": "지역사회 내 이동 능력을 평가합니다. 대중교통 이용, 장거리 이동 등을 포함합니다.",
+      "mappingRationale": "WHO ICF 분류체계 d460 코드: 다양한 장소로 이동하기. 지역사회 내 이동, 대중교통 이용 등을 포함합니다.",
+      "options": [
+        {
+          "value": 0,
+          "label": "문제 없음",
+          "description": "독립적으로 다양한 장소로 이동 가능"
+        },
+        {
+          "value": 1,
+          "label": "경미한 문제",
+          "description": "일부 장소 이동 시 약간의 어려움"
+        },
+        {
+          "value": 2,
+          "label": "중간 정도 문제",
+          "description": "많은 장소 이동 시 어려움, 도움 필요"
+        },
+        {
+          "value": 3,
+          "label": "심각한 문제",
+          "description": "대부분의 장소 이동 불가능, 상당한 도움 필요"
+        },
+        {
+          "value": 4,
+          "label": "완전한 문제",
+          "description": "집 밖 이동 불가능"
+        }
+      ]
+    },
+    {
+      "id": "item-d510",
+      "icfCode": "d510",
+      "domain": "d",
+      "question": "목욕, 샤워, 세면 등 신체 청결을 위한 활동 수행 능력은 어떻습니까?",
+      "clinicalDescription": "신체 청결 유지를 위한 목욕, 샤워, 세면 등의 활동 수행 능력을 평가합니다.",
+      "mappingRationale": "WHO ICF 분류체계 d510 코드: 씻기. 목욕, 샤워, 세면 등 신체 청결 유지 활동을 평가합니다.",
+      "options": [
+        {
+          "value": 0,
+          "label": "문제 없음",
+          "description": "독립적으로 모든 청결 활동 수행 가능"
+        },
+        {
+          "value": 1,
+          "label": "경미한 문제",
+          "description": "일부 청결 활동에서 약간의 어려움"
+        },
+        {
+          "value": 2,
+          "label": "중간 정도 문제",
+          "description": "많은 청결 활동에서 어려움, 부분적 도움 필요"
+        },
+        {
+          "value": 3,
+          "label": "심각한 문제",
+          "description": "대부분의 청결 활동 수행 불가능, 상당한 도움 필요"
+        },
+        {
+          "value": 4,
+          "label": "완전한 문제",
+          "description": "청결 활동 수행 불가능, 전적인 도움 필요"
+        }
+      ]
+    },
+    {
+      "id": "item-d520",
+      "icfCode": "d520",
+      "domain": "d",
+      "question": "상의, 하의, 신발 등 의복을 착용하고 벗는 능력은 어떻습니까?",
+      "clinicalDescription": "의복 착용 및 탈의 능력을 평가합니다. 단추, 지퍼, 끈 묶기 등을 포함합니다.",
+      "mappingRationale": "WHO ICF 분류체계 d520 코드: 옷 입기. 상의, 하의, 신발 등 의복 착용 전 과정을 포함합니다.",
+      "options": [
+        {
+          "value": 0,
+          "label": "문제 없음",
+          "description": "독립적으로 모든 의복 착용/탈의 가능"
+        },
+        {
+          "value": 1,
+          "label": "경미한 문제",
+          "description": "일부 의복(단추, 지퍼 등)에서 약간의 어려움"
+        },
+        {
+          "value": 2,
+          "label": "중간 정도 문제",
+          "description": "많은 의복 착용/탈의에서 어려움, 부분적 도움 필요"
+        },
+        {
+          "value": 3,
+          "label": "심각한 문제",
+          "description": "대부분의 의복 착용/탈의 불가능, 상당한 도움 필요"
+        },
+        {
+          "value": 4,
+          "label": "완전한 문제",
+          "description": "의복 착용/탈의 불가능, 전적인 도움 필요"
+        }
+      ]
+    },
+    {
+      "id": "item-d550",
+      "icfCode": "d550",
+      "domain": "d",
+      "question": "음식을 입으로 가져가고, 씹고, 삼키는 능력은 어떻습니까?",
+      "clinicalDescription": "음식 섭취 전 과정을 평가합니다. 식사 도구 사용, 씹기, 삼키기 등을 포함합니다.",
+      "mappingRationale": "WHO ICF 분류체계 d550 코드: 먹기. 음식을 입으로 가져가고, 씹고, 삼키는 전 과정을 평가합니다.",
+      "options": [
+        {
+          "value": 0,
+          "label": "문제 없음",
+          "description": "독립적으로 모든 음식 섭취 가능"
+        },
+        {
+          "value": 1,
+          "label": "경미한 문제",
+          "description": "일부 음식에서 약간의 어려움"
+        },
+        {
+          "value": 2,
+          "label": "중간 정도 문제",
+          "description": "많은 음식 섭취에서 어려움, 부분적 도움 필요"
+        },
+        {
+          "value": 3,
+          "label": "심각한 문제",
+          "description": "대부분의 음식 섭취 불가능, 상당한 도움 필요"
+        },
+        {
+          "value": 4,
+          "label": "완전한 문제",
+          "description": "음식 섭취 불가능, 전적인 도움 필요"
+        }
+      ]
+    },
+    {
+      "id": "item-d710",
+      "icfCode": "d710",
+      "domain": "d",
+      "question": "가족 및 친밀한 관계에서의 상호작용 능력은 어떻습니까?",
+      "clinicalDescription": "가족, 친구 등 친밀한 관계에서의 관계 형성 및 유지 능력을 평가합니다.",
+      "mappingRationale": "WHO ICF 분류체계 d710 코드: 기본적 대인관계. 가족, 친구와의 관계 형성 및 유지를 평가합니다.",
+      "options": [
+        {
+          "value": 0,
+          "label": "문제 없음",
+          "description": "독립적으로 친밀한 관계 형성 및 유지 가능"
+        },
+        {
+          "value": 1,
+          "label": "경미한 문제",
+          "description": "일부 관계에서 약간의 어려움"
+        },
+        {
+          "value": 2,
+          "label": "중간 정도 문제",
+          "description": "많은 관계에서 어려움, 부분적 도움 필요"
+        },
+        {
+          "value": 3,
+          "label": "심각한 문제",
+          "description": "대부분의 관계 형성/유지 불가능, 상당한 도움 필요"
+        },
+        {
+          "value": 4,
+          "label": "완전한 문제",
+          "description": "관계 형성/유지 불가능"
+        }
+      ]
+    },
+    {
+      "id": "item-d720",
+      "icfCode": "d720",
+      "domain": "d",
+      "question": "직장, 학교, 지역사회 등 다양한 사회적 맥락에서의 관계 형성 및 유지 능력은 어떻습니까?",
+      "clinicalDescription": "다양한 사회적 환경에서의 관계 형성 및 유지 능력을 평가합니다.",
+      "mappingRationale": "WHO ICF 분류체계 d720 코드: 복잡한 대인관계. 직장, 학교, 지역사회 등 다양한 환경에서의 관계를 평가합니다.",
+      "options": [
+        {
+          "value": 0,
+          "label": "문제 없음",
+          "description": "독립적으로 다양한 사회적 관계 형성 및 유지 가능"
+        },
+        {
+          "value": 1,
+          "label": "경미한 문제",
+          "description": "일부 사회적 맥락에서 약간의 어려움"
+        },
+        {
+          "value": 2,
+          "label": "중간 정도 문제",
+          "description": "많은 사회적 맥락에서 어려움, 부분적 도움 필요"
+        },
+        {
+          "value": 3,
+          "label": "심각한 문제",
+          "description": "대부분의 사회적 관계 형성/유지 불가능, 상당한 도움 필요"
+        },
+        {
+          "value": 4,
+          "label": "완전한 문제",
+          "description": "사회적 관계 형성/유지 불가능"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
