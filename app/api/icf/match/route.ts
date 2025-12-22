@@ -2,9 +2,14 @@ import { NextResponse } from 'next/server'
 import OpenAI from 'openai'
 import { getAllCodes } from '@/data/icf-codes'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+function getOpenAIClient() {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error('OpenAI API 키가 설정되지 않았습니다.')
+  }
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  })
+}
 
 // ICF 코드 목록을 프롬프트에 포함하기 위한 문자열 생성
 function generateICFCodesContext(): string {
@@ -25,6 +30,8 @@ export async function POST(request: Request) {
         { status: 500 }
       )
     }
+
+    const openai = getOpenAIClient()
 
     const { clinicalText } = await request.json()
 

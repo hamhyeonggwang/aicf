@@ -1,9 +1,14 @@
 import { NextResponse } from 'next/server'
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
+function getOpenAIClient() {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error('OpenAI API 키가 설정되지 않았습니다.')
+  }
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  })
+}
 
 export async function POST(request: Request) {
   try {
@@ -13,6 +18,8 @@ export async function POST(request: Request) {
         { status: 500 }
       )
     }
+
+    const openai = getOpenAIClient()
 
     const { clinicalText, icfCode, icfTitle } = await request.json()
 
