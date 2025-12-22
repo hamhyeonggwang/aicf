@@ -68,9 +68,40 @@ export default function CaseConferenceReport({
     return ICF_QUALIFIER_LABELS[type][score as keyof typeof ICF_QUALIFIER_LABELS[typeof type]] || ''
   }
 
+  // 타입 정의
+  type BodyFunctionItem = {
+    code: string
+    twoLevelCode: string
+    content: string
+    qualifier: string
+    qualifierLabel: string
+    score: number
+  }
+
+  type ActivityItem = {
+    code: string
+    twoLevelCode: string
+    content: string
+    performance: string
+    performanceLabel: string
+    capacity: string
+    capacityLabel: string
+    score: number
+  }
+
+  type EnvironmentItem = {
+    code: string
+    category: string
+    content: string
+    type: 'barrier' | 'facilitator'
+    qualifier: string
+    qualifierLabel: string
+    score: number
+  }
+
   // 도메인별 코드 그룹화
-  const bodyFunctionItems = Object.entries(scores)
-    .map(([itemId, score]) => {
+  const bodyFunctionItems: BodyFunctionItem[] = Object.entries(scores)
+    .map(([itemId, score]): BodyFunctionItem | null => {
       const item = tool.items.find(i => i.id === itemId)
       if (!item || (item.domain !== 'b' && item.domain !== 's')) return null
       
@@ -84,10 +115,10 @@ export default function CaseConferenceReport({
         score: score.score,
       }
     })
-    .filter(Boolean)
+    .filter((item): item is BodyFunctionItem => item !== null)
 
-  const activityItems = Object.entries(scores)
-    .map(([itemId, score]) => {
+  const activityItems: ActivityItem[] = Object.entries(scores)
+    .map(([itemId, score]): ActivityItem | null => {
       const item = tool.items.find(i => i.id === itemId)
       if (!item || item.domain !== 'd') return null
       
@@ -103,10 +134,10 @@ export default function CaseConferenceReport({
         score: score.score,
       }
     })
-    .filter(Boolean)
+    .filter((item): item is ActivityItem => item !== null)
 
-  const environmentItems = Object.entries(scores)
-    .map(([itemId, score]) => {
+  const environmentItems: EnvironmentItem[] = Object.entries(scores)
+    .map(([itemId, score]): EnvironmentItem | null => {
       const item = tool.items.find(i => i.id === itemId)
       if (!item || item.domain !== 'e') return null
       
@@ -122,7 +153,7 @@ export default function CaseConferenceReport({
         score: score.score,
       }
     })
-    .filter(Boolean)
+    .filter((item): item is EnvironmentItem => item !== null)
 
   const generatePDF = async () => {
     if (!reportRef.current) return
