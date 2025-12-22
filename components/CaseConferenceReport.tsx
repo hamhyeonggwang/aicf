@@ -8,7 +8,9 @@ import type {
   AssessmentScore, 
   PatientInfo, 
   PersonalFactors,
-  TreatmentGoals,
+  TreatmentGoals
+} from '@/types/icf'
+import { 
   ICF_QUALIFIER_LABELS,
   ICF_ENVIRONMENT_FACILITATOR_LABELS
 } from '@/types/icf'
