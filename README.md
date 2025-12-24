@@ -32,6 +32,10 @@ ICF(International Classification of Functioning, Disability and Health) 분류�
 # 의존성 설치
 npm install
 
+# 환경 변수 설정 (선택사항)
+# .env.local 파일 생성 후 Google Apps Script URL 추가
+# NEXT_PUBLIC_GAS_API_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+
 # 개발 서버 실행
 npm run dev
 
@@ -39,6 +43,54 @@ npm run dev
 npm run build
 npm start
 ```
+
+## 🤖 AI 기능 설정 (Google Apps Script)
+
+AI 기능(ICF 코드 매칭, 점수 추천, 중재 추천)을 사용하려면 Google Apps Script를 설정해야 합니다.
+
+### 빠른 설정 (5분)
+
+1. **Google Apps Script 프로젝트 생성**
+   - https://script.google.com 접속
+   - "새 프로젝트" 클릭
+
+2. **파일 업로드**
+   - `google-apps-script/` 폴더의 4개 파일을 Google Apps Script에 복사:
+     - `Code.gs`
+     - `ICFCodes.gs`
+     - `OpenAIService.gs`
+     - `Handlers.gs`
+
+3. **OpenAI API 키 설정**
+   - 프로젝트 설정 → 스크립트 속성
+   - 속성: `OPENAI_API_KEY`, 값: OpenAI API 키
+
+4. **배포**
+   - 배포 → 새 배포 → 웹 앱
+   - 실행할 사용자: **"나"**
+   - 액세스 권한: **"모든 사용자"**
+   - 배포 URL 복사
+
+5. **프론트엔드 연결**
+   - `.env.local` 파일에 배포 URL 추가:
+     ```bash
+     NEXT_PUBLIC_GAS_API_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+     ```
+
+**자세한 가이드**: [google-apps-script/QUICK_START.md](./google-apps-script/QUICK_START.md) 또는 [google-apps-script/DEPLOYMENT_GUIDE.md](./google-apps-script/DEPLOYMENT_GUIDE.md)
+
+**참고**: Google Apps Script를 설정하지 않아도 기본 기능은 사용할 수 있지만, AI 기능은 작동하지 않습니다.
+
+### 📊 Google 스프레드시트 연동 (선택사항)
+
+평가 결과를 Google 스프레드시트에 자동으로 저장할 수 있습니다.
+
+**설정 방법:**
+1. Google 스프레드시트 생성
+2. Google Apps Script에 스프레드시트 ID 설정
+3. 평가 완료 후 "스프레드시트에 저장" 버튼 클릭
+
+**자세한 가이드**: [google-apps-script/SPREADSHEET_SETUP.md](./google-apps-script/SPREADSHEET_SETUP.md)
 
 ## 프로젝트 구조
 

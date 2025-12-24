@@ -34,7 +34,57 @@ function doOptions() {
  */
 function doPost(e) {
   try {
-    const requestData = JSON.parse(e.postData.contents);
+    // 디버깅: 요청 정보 로깅
+    Logger.log('doPost 호출됨');
+    Logger.log('e: ' + JSON.stringify(e));
+    Logger.log('e.postData: ' + JSON.stringify(e.postData));
+    
+    // 요청 본문 확인
+    if (!e) {
+      return ContentService.createTextOutput(JSON.stringify({
+        error: '요청 객체가 없습니다.'
+      }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    
+    if (!e.postData) {
+      return ContentService.createTextOutput(JSON.stringify({
+        error: '요청 본문(postData)이 없습니다. POST 요청의 본문에 JSON 데이터를 포함해주세요.',
+        debug: 'e.keys: ' + Object.keys(e).join(', ')
+      }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    
+    if (!e.postData.contents) {
+      return ContentService.createTextOutput(JSON.stringify({
+        error: '요청 본문 내용(contents)이 비어있습니다.',
+        debug: 'postData.keys: ' + (e.postData ? Object.keys(e.postData).join(', ') : 'null')
+      }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    
+    Logger.log('요청 본문 내용: ' + e.postData.contents);
+    
+    let requestData;
+    try {
+      requestData = JSON.parse(e.postData.contents);
+      Logger.log('파싱된 요청 데이터: ' + JSON.stringify(requestData));
+    } catch (parseError) {
+      Logger.log('JSON 파싱 오류: ' + parseError.toString());
+      return ContentService.createTextOutput(JSON.stringify({
+        error: 'JSON 파싱 오류: ' + parseError.toString() + '. 요청 본문이 유효한 JSON 형식인지 확인해주세요.',
+        debug: '원본 내용: ' + e.postData.contents.substring(0, 200)
+      }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    
+    if (!requestData || typeof requestData !== 'object') {
+      return ContentService.createTextOutput(JSON.stringify({
+        error: '요청 데이터가 올바르지 않습니다. JSON 객체를 전송해주세요.'
+      }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    
     const endpoint = requestData.endpoint || 'match';
     
     let result;
@@ -48,8 +98,11 @@ function doPost(e) {
       case 'intervention-recommendation':
         result = handleInterventionRecommendation(requestData);
         break;
+      case 'save-assessment':
+        result = handleSaveAssessment(requestData);
+        break;
       default:
-        throw new Error('알 수 없는 엔드포인트: ' + endpoint);
+        throw new Error('알 수 없는 엔드포인트: ' + endpoint + '. 지원되는 엔드포인트: match, score-recommendation, intervention-recommendation, save-assessment');
     }
     
     return ContentService.createTextOutput(JSON.stringify(result))
@@ -57,7 +110,8 @@ function doPost(e) {
       
   } catch (error) {
     return ContentService.createTextOutput(JSON.stringify({
-      error: error.toString()
+      error: error.toString(),
+      message: '서버 오류가 발생했습니다.'
     }))
       .setMimeType(ContentService.MimeType.JSON);
   }
@@ -72,7 +126,7 @@ function doGet(e) {
   try {
     return ContentService.createTextOutput(JSON.stringify({
       message: 'ICF API 서버가 실행 중입니다.',
-      endpoints: ['match', 'score-recommendation', 'intervention-recommendation'],
+      endpoints: ['match', 'score-recommendation', 'intervention-recommendation', 'save-assessment'],
       version: '1.0.0',
       usage: '이 API는 POST 요청을 사용합니다. endpoint 필드를 포함하여 요청하세요.'
     }))

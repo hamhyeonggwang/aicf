@@ -27,25 +27,51 @@ export default function ScoreAnalysis({ scores, clinicalText }: ScoreAnalysisPro
 
     setLoadingAI(prev => ({ ...prev, [code]: true }))
     try {
-      const response = await fetch('/api/icf/intervention-recommendation', {
+      const gasUrl = process.env.NEXT_PUBLIC_GAS_API_URL
+      const apiUrl = gasUrl || '/api/icf/intervention-recommendation'
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          clinicalText,
-          icfCode: code,
-          icfTitle: title,
-          performanceScore,
-          capacityScore
-        }),
+        body: JSON.stringify(
+          gasUrl
+            ? { 
+                endpoint: 'intervention-recommendation',
+                clinicalText,
+                icfCode: code,
+                icfTitle: title,
+                performanceScore,
+                capacityScore
+              }
+            : {
+                clinicalText,
+                icfCode: code,
+                icfTitle: title,
+                performanceScore,
+                capacityScore
+              }
+        ),
       })
 
-      if (response.ok) {
-        const data = await response.json()
-        setAiInterventions(prev => ({
-          ...prev,
-          [code]: data
-        }))
+      // Google Apps Script는 에러가 있어도 HTTP 200을 반환하므로, response.ok 체크는 로컬 API용
+      if (!response.ok && !gasUrl) {
+        const errorData = await response.json().catch(() => ({}))
+        console.warn('AI 중재 예시 API 오류:', errorData.error || `HTTP ${response.status}`)
+        return
       }
+
+      const data = await response.json()
+      
+      // Google Apps Script와 로컬 API 모두 error 필드로 에러를 반환할 수 있음
+      if (data.error) {
+        console.warn('AI 중재 예시 API 오류:', data.error)
+        return
+      }
+
+      setAiInterventions(prev => ({
+        ...prev,
+        [code]: data
+      }))
     } catch (error) {
       console.error('AI 중재 예시 오류:', error)
     } finally {

@@ -1,10 +1,12 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import type { ScoreData } from './ScoreInput'
 import type { ICFCodeMatch } from './ClinicalLanguageInput'
+import type { PatientInfo } from '@/types/icf'
+import type { ICFCoreSet } from '@/types/core-set'
 import ScoreAnalysis from './ScoreAnalysis'
 import RadarChart from './RadarChart'
 import './ReportGenerator.css'
@@ -27,10 +29,21 @@ interface ReportGeneratorProps {
   clinicalText: string
   matchedCodes: ICFCodeMatch[]
   scores: ScoreData[]
+  patientInfo?: PatientInfo
+  coreSet?: ICFCoreSet | null
+  respondentType?: 'therapist' | 'caregiver'
 }
 
-export default function ReportGenerator({ clinicalText, matchedCodes, scores }: ReportGeneratorProps) {
+export default function ReportGenerator({ 
+  clinicalText, 
+  matchedCodes, 
+  scores,
+  patientInfo,
+  coreSet,
+  respondentType = 'therapist'
+}: ReportGeneratorProps) {
   const reportRef = useRef<HTMLDivElement>(null)
+  const [saving, setSaving] = useState(false)
 
   const generatePDF = async () => {
     if (!reportRef.current) return
@@ -89,14 +102,101 @@ export default function ReportGenerator({ clinicalText, matchedCodes, scores }: 
     return '완전한 문제'
   }
 
+  const saveToSpreadsheet = async () => {
+    if (scores.length === 0) {
+      alert('저장할 평가 점수가 없습니다.')
+      return
+    }
+
+    setSaving(true)
+    try {
+      const gasUrl = process.env.NEXT_PUBLIC_GAS_API_URL
+      const apiUrl = gasUrl || '/api/icf/save-assessment'
+      
+      // 스프레드시트에 저장할 데이터 준비
+      const assessmentData = {
+        patientInfo: patientInfo || {},
+        coreSet: coreSet || null,
+        clinicalText: clinicalText,
+        respondentType: respondentType,
+        scores: scores.map(score => {
+          const matchedCode = matchedCodes.find(m => m.code === score.code)
+          return {
+            icfCode: score.code,
+            code: score.code,
+            domain: matchedCode?.code?.charAt(0) || '',
+            title: score.title,
+            question: score.title,
+            score: score.performanceScore || score.capacityScore || 0,
+            performanceScore: score.performanceScore,
+            capacityScore: score.capacityScore,
+            notes: score.notes || ''
+          }
+        })
+      }
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(
+          gasUrl
+            ? { endpoint: 'save-assessment', ...assessmentData }
+            : assessmentData
+        ),
+      })
+
+      if (!response.ok && !gasUrl) {
+        const errorData = await response.json().catch(() => ({}))
+        throw new Error(errorData.error || `HTTP ${response.status}`)
+      }
+
+      const data = await response.json()
+      
+      if (data.error) {
+        throw new Error(data.error)
+      }
+
+      if (data.success) {
+        alert(`평가 결과가 스프레드시트에 저장되었습니다.\n저장된 행 수: ${data.rowCount}개`)
+        if (data.spreadsheetUrl) {
+          const openSheet = confirm('스프레드시트를 열어보시겠습니까?')
+          if (openSheet) {
+            window.open(data.spreadsheetUrl, '_blank')
+          }
+        }
+      } else {
+        throw new Error(data.error || '저장에 실패했습니다.')
+      }
+    } catch (error: any) {
+      console.error('스프레드시트 저장 오류:', error)
+      alert(`스프레드시트 저장 중 오류가 발생했습니다: ${error.message || error}`)
+    } finally {
+      setSaving(false)
+    }
+  }
+
   return (
     <>
       <div className="report-generator">
         <div className="report-header-section">
           <h2 className="report-title">평가 보고서</h2>
-          <button className="pdf-button" onClick={generatePDF} type="button">
-            PDF로 저장
-          </button>
+          <div className="report-actions">
+            <button 
+              className="pdf-button" 
+              onClick={generatePDF} 
+              type="button"
+            >
+              PDF로 저장
+            </button>
+            <button 
+              className="spreadsheet-button" 
+              onClick={saveToSpreadsheet} 
+              type="button"
+              disabled={saving || scores.length === 0}
+            >
+              {saving ? '저장 중...' : '스프레드시트에 저장'}
+            </button>
+          </div>
         </div>
 
         <div ref={reportRef} className="report-content">

@@ -9,10 +9,15 @@
  * @return {Object} 매칭 결과
  */
 function handleMatch(requestData) {
+  // 요청 데이터 유효성 검사
+  if (!requestData || typeof requestData !== 'object') {
+    throw new Error('요청 데이터가 올바르지 않습니다.');
+  }
+  
   const clinicalText = requestData.clinicalText;
   
   if (!clinicalText || typeof clinicalText !== 'string') {
-    throw new Error('임상 언어 텍스트가 필요합니다.');
+    throw new Error('임상 언어 텍스트(clinicalText)가 필요합니다. 요청 본문에 "clinicalText" 필드를 포함해주세요.');
   }
   
   const icfCodesContext = generateICFCodesContext();
@@ -69,12 +74,17 @@ function handleMatch(requestData) {
  * @return {Object} 점수 추천 결과
  */
 function handleScoreRecommendation(requestData) {
+  // 요청 데이터 유효성 검사
+  if (!requestData || typeof requestData !== 'object') {
+    throw new Error('요청 데이터가 올바르지 않습니다.');
+  }
+  
   const clinicalText = requestData.clinicalText;
   const icfCode = requestData.icfCode;
   const icfTitle = requestData.icfTitle || '';
   
   if (!clinicalText || !icfCode) {
-    throw new Error('임상 언어 텍스트와 ICF 코드가 필요합니다.');
+    throw new Error('임상 언어 텍스트(clinicalText)와 ICF 코드(icfCode)가 필요합니다.');
   }
   
   const systemPrompt = '당신은 ICF(International Classification of Functioning, Disability and Health) 평가 전문가입니다.\n' +
@@ -117,6 +127,11 @@ function handleScoreRecommendation(requestData) {
  * @return {Object} 중재 추천 결과
  */
 function handleInterventionRecommendation(requestData) {
+  // 요청 데이터 유효성 검사
+  if (!requestData || typeof requestData !== 'object') {
+    throw new Error('요청 데이터가 올바르지 않습니다.');
+  }
+  
   const clinicalText = requestData.clinicalText;
   const icfCode = requestData.icfCode;
   const icfTitle = requestData.icfTitle || '';
@@ -124,7 +139,7 @@ function handleInterventionRecommendation(requestData) {
   const capacityScore = requestData.capacityScore;
   
   if (!clinicalText || !icfCode) {
-    throw new Error('임상 언어 텍스트와 ICF 코드가 필요합니다.');
+    throw new Error('임상 언어 텍스트(clinicalText)와 ICF 코드(icfCode)가 필요합니다.');
   }
   
   const systemPrompt = '당신은 작업치료 및 재활 전문가입니다.\n' +

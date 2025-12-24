@@ -170,12 +170,14 @@ export default function ClinicalLanguageInput({ onCodeMatch }: ClinicalLanguageI
         ),
       })
 
-      if (!response.ok) {
+      // Google Apps Script는 에러가 있어도 HTTP 200을 반환하므로, response.ok 체크는 로컬 API용
+      if (!response.ok && !gasUrl) {
         throw new Error(`API 오류: ${response.status}`)
       }
 
       const data = await response.json()
       
+      // Google Apps Script와 로컬 API 모두 error 필드로 에러를 반환할 수 있음
       if (data.error) {
         throw new Error(data.error)
       }
